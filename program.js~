@@ -1,0 +1,20 @@
+
+var http = require('http');
+const BufferList = require('bl');
+var bl = new BufferList();
+
+
+for (var i = 2; i <= process.argv.length; i++) {
+  var url = process.argv[i];
+  
+    http.get(url, function (res) {
+      res.on('data', function(data) {
+        console.log(data);
+      });    
+    }).on('error', console.error);
+}
+
+
+
+
+

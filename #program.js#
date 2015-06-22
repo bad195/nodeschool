@@ -1,0 +1,13 @@
+var extName = process.argv[3];
+var pathName = process.argv[2];
+
+var mymodule = require('./module.js');
+mymodule(pathName, extName, function (err, data) {
+  if (!err) {
+    for (var i in data) {
+       console.log(data[i]);
+    }
+    
+  }
+});
+
